@@ -11,16 +11,10 @@ class BoxListView(ListView):
     context_object_name = 'box_list'
     template_name = 'bigbox/box_list.html'
 
-
 class BoxDetailView(DetailView):
     model = Box
     template_name = 'bigbox/box_detail.html'
     context_object_name = 'box'
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['box_activities'] = 
-    #     return context
 
 class BoxActivityListView(ListView):
     model = Activity
