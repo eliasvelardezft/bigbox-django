@@ -9,14 +9,14 @@
     <title>Bigbox</title>
 </head>
 <body>
-    <h1>Box list</h1>
+    <h1>Bigbox</h1>
     <div class="container">
         <ul>
             {% for box in box_list %}
             <li>
                 <div class="box"> 
                     <a class="name-link" href="{{ box.slug }}">{{ box.name }}</a>
-                    <p>Price: ${{ box.price }}</p>
+                    <p>${{ box.price }}</p>
                 </div>
             </li>
             {% endfor %}
