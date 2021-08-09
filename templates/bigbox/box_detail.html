@@ -1,25 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <title>Bigbox</title>
 </head>
 <body>
-    <h1>Box detail: {{ box.name }}</h1>
-    <p>${{ box.price }}</p>
-    <h2>Box list</h2>
-    <ul>
-        {% for activity in box.activities.all|slice:':5' %}
-            <li>
-                <div>
-                    <h2>Name: {{ activity.name }}</h2>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <h2 class="name">{{ box.name }}</h1>
+        <h2 class="price">Precio: ${{ box.price }}</h2>
+        <h2>Descripcion</h2>
+        {{ box.description|safe }}
+        <div class="bulleted-list">
+            <h2>
+                Lista de Actividades (primeras 5)
+            </h2>
+            <ul>
+                {% for activity in activity_list_first_five %}
+                    <li>
+                        <div>
+                            <h3>{{ activity.name }}</h3>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 
-    <a href="activity">all activities</a>
+    <a id="all-activities-link" href="activity">todas las actividades</a>
 </body>
 </html>

@@ -1,24 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <title>Bigbox</title>
 </head>
 <body>
     <h1>Box list</h1>
-    <ul>
-        {% for box in box_list %}
+    <div class="container">
+        <ul>
+            {% for box in box_list %}
             <li>
-                <div>
-                    <h2>Name: {{ box.name }}</h2>
+                <div class="box"> 
+                    <a class="name-link" href="{{ box.slug }}">{{ box.name }}</a>
                     <p>Price: ${{ box.price }}</p>
-                    <p>Purchase avaliable: {{ box.purchase_available }}</p>
                 </div>
             </li>
-        {% endfor %}
-    </ul>
-    
+            {% endfor %}
+        </ul>
+    </div>
+        
 </body>
 </html>

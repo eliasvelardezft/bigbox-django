@@ -7,7 +7,23 @@ from .models import (
 )
 # Register your models here.
 
-admin.site.register(Box)
-admin.site.register(Activity)
-admin.site.register(Category)
-admin.site.register(Reason)
+@admin.register(Box)
+class BoxAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'price')
+    raw_id_fields = ('category',)
+    prepopulated_fields = {'slug': ('name',)}
+
+@admin.register(Activity)
+class ActivityAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'category')
+    list_filter = ('category',)
+    ordering = ('id',)
+    search_fields = ('name',)
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+
+@admin.register(Reason)
+class ReasonAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')

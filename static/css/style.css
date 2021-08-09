@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+
+/* css reset  */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+ol, ul {
+	list-style: none;
+}
+
+/* site css  */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(39, 39, 70);
+    color: black;
+    position: relative;
+    height: 100vh;
+}
+
+h1 {
+    color: rgb(250, 241, 228);
+    margin: 30px 0;
+}
+
+#all-activities-link {
+    position: relative;
+    top: 20px;
+    color: #ff6c5f;
+    text-decoration: none;
+}
+
+#all-activities-link:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 50%;
+    max-width: 600px;
+    min-width: 350px;
+    border-radius: 10px;
+    background-color: rgb(250, 241, 228);
+    padding: 15px;
+}
+
+.box {
+    border: 2px solid #ff6c5f;
+    border-radius: 10px;
+    padding: 5px;
+    list-style: none;
+    margin: 15px;
+}
+
+.price {
+    color: #5076dd;
+    font-size: 25px;
+}
+.name {
+    color: #ff6c5f;
+    text-align: center;
+    font-size: 45px;
+}
+
+.bulleted-list {
+    margin-top: 20px;
+}
+
+.bulleted-list ul {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+li div h3::before {
+    content: "•"; 
+    color: #ff6c5f;
+    margin-right: 10px;
+}
+
+.name-link {
+    padding-top: 10px;
+    color: #5076dd;
+    text-decoration: none;
+    font-size: 30px;
+}
+.name-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #ff6c5f;
+}
+.pagination{
+    color: #ff6c5f;
+    position: relative;
+    top: 20px;
+}
+
+.step-links a {
+    color: #5076dd;
+    text-decoration: none;
+    margin: 0 4px;
+    position: relative;
+}
+
+.step-links a:hover {
+    text-decoration: underline;
+    text-decoration-color: #ff6c5f;
+}

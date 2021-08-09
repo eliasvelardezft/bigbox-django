@@ -16,11 +16,15 @@ class Reason(CommonInfo):
 class Category(CommonInfo):    
     description = models.TextField(verbose_name=u'descripción')
 
+    def __str__(self) -> str:
+        return self.name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
     internal_name = models.CharField(max_length=200)
     description = models.TextField(verbose_name=u'descripción')
+
 
     category = models.ForeignKey(Category, verbose_name='categoría', on_delete=models.CASCADE,null=True, blank=True)
 
